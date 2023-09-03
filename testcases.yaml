@@ -1,0 +1,30 @@
+imsi: "imsi-999700000000001"
+
+testcases:
+  sec_cmd_mode_testcases: 
+    - 
+      id: 1
+      result: true
+      plain: true
+      integrity: 0x1
+      ciphering: 0x2
+      mac: "00000000"
+    - 
+      id: 2
+      result: true
+      plain: true
+      integrity: 0x2
+      ciphering: 0x2
+  offset_testcases:
+    - 
+      id: 3
+      result: true
+      plain: false
+      msg_type: 93 # Security Mode Command
+      offsets:
+        - offset: 20  
+          value:  "0"
+        - offset: 21
+          value: "1"
+        - offset: 4
+          value: "00000000"
