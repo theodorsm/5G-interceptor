@@ -1,0 +1,24 @@
+supi: "imsi-999700000000001"
+
+testcases:
+  - 
+    id: 1
+    plain: true
+    msg_type: 93 # Security Mode Command
+    integrity: "2"
+    ciphering: "1"
+  - 
+    id: 2
+    plain: true
+    msg_type: 93 # Security Mode Command
+    integrity: "1"
+    ciphering: "2"
+  - 
+    id: 3
+    plain: false
+    msg_type: 93 # Security Mode Command
+    offsets:
+      - offset: 20  
+        value:  "01" 
+      - offset: 4
+        value: "00000000"

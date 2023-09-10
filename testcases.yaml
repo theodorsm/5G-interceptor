@@ -1,31 +1,160 @@
-nrf: "127.0.0.10:7777"
-imsi: "imsi-999700000000001"
+supi: "imsi-999700000000001"
 
 testcases:
-  sec_cmd_mode_testcases: 
-    - 
-      id: 1
-      result: true
-      plain: true
-      integrity: 0x1
-      ciphering: 0x2
-      mac: "00000000"
-    - 
-      id: 2
-      result: true
-      plain: true
-      integrity: 0x2
-      ciphering: 0x2
-  offset_testcases:
-    - 
-      id: 3
-      result: true
-      plain: false
-      msg_type: 93 # Security Mode Command
-      offsets:
-        - offset: 20  
-          value:  "0"
-        - offset: 21
-          value: "1"
-        - offset: 4
-          value: "00000000"
+  - 
+    id: 1
+    plain: false
+    msg_type: 93 # Security Mode Command
+    integrity: "0"
+    ciphering: "0"
+  - 
+    id: 2
+    plain: false
+    msg_type: 93 
+    integrity: "1"
+    ciphering: "0"
+  - 
+    id: 3
+    plain: false
+    msg_type: 93 
+    integrity: "2"
+    ciphering: "0"
+  - 
+    id: 4
+    plain: false
+    msg_type: 93 
+    integrity: "3"
+    ciphering: "0"
+  - 
+    id: 5
+    plain: false
+    msg_type: 93 
+    integrity: "4"
+    ciphering: "0"
+  - 
+    id: 6
+    plain: false
+    msg_type: 93 
+    integrity: "5"
+    ciphering: "0"
+  - 
+    id: 7
+    plain: false
+    msg_type: 93 
+    integrity: "6"
+    ciphering: "0"
+  - 
+    id: 8
+    plain: false
+    msg_type: 93 
+    integrity: "7"
+    ciphering: "0"
+  - 
+    id: 9
+    plain: false
+    msg_type: 93 
+    integrity: "8"
+    ciphering: "0"
+  - 
+    id: 10
+    plain: false
+    msg_type: 93 
+    integrity: "0"
+    ciphering: "0"
+    mac: "00000000"
+  - 
+    id: 11 
+    plain: false
+    msg_type: 93 
+    integrity: "1"
+    ciphering: "0"
+    mac: "00000000"
+  - 
+    id: 12 
+    plain: false
+    msg_type: 93 
+    integrity: "2"
+    ciphering: "0"
+    mac: "00000000"
+  - 
+    id: 13
+    plain: false
+    msg_type: 93 
+    integrity: "3"
+    ciphering: "0"
+    mac: "00000000"
+  - 
+    id: 14 
+    plain: false
+    msg_type: 93 
+    integrity: "4"
+    ciphering: "0"
+    mac: "00000000"
+  - 
+    id: 15 
+    plain: false
+    msg_type: 93 
+    integrity: "8"
+    ciphering: "0"
+    mac: "00000000"
+  - 
+    id: 16 
+    plain: false
+    msg_type: 93 
+    integrity: "1"
+    ciphering: "1"
+  - 
+    id: 17 
+    plain: false
+    msg_type: 93 
+    integrity: "1"
+    ciphering: "2"
+  - 
+    id: 18 
+    plain: false
+    msg_type: 93 
+    integrity: "1"
+    ciphering: "3"
+  - 
+    id: 19 
+    plain: false
+    msg_type: 93 
+    integrity: "1"
+    ciphering: "4"
+  - 
+    id: 20 
+    plain: false
+    msg_type: 93 
+    integrity: "1"
+    ciphering: "5"
+  - 
+    id: 21 
+    plain: false
+    msg_type: 93 
+    integrity: "1"
+    ciphering: "6"
+  - 
+    id: 22 
+    plain: false
+    msg_type: 93 
+    integrity: "1"
+    ciphering: "7"
+  - 
+    id: 23 
+    plain: false
+    msg_type: 93 
+    integrity: "1"
+    ciphering: "8"
+  - 
+    id: 24 
+    plain: false
+    msg_type: 93 
+    integrity: "1"
+    ciphering: "f"
+  - 
+    id: 25 
+    plain: false
+    msg_type: 93 
+    integrity: "f"
+    ciphering: "1"
+  
