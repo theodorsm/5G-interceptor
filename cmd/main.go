@@ -128,7 +128,6 @@ func main() {
 			fmt.Println("Error accepting: ", err.Error())
 			os.Exit(1)
 		}
-		fmt.Println("client connected")
 		processClient(connection)
 	}
 	fmt.Println("done")
@@ -137,7 +136,6 @@ func main() {
 func processClient(conn net.Conn) {
 
 	defer func() {
-		fmt.Println("Closing connection")
 		conn.Close()
 	}()
 
@@ -145,7 +143,6 @@ func processClient(conn net.Conn) {
 		return
 	}
 
-	fmt.Println("Current state: ", state)
 	fmt.Println("Current case: ", currentCase)
 	switch state {
 	case SUPI_STATE:
@@ -161,7 +158,7 @@ func processClient(conn net.Conn) {
 		if err != nil {
 			fmt.Println("Error reading:", err.Error())
 		}
-		fmt.Println("Msg type: ", buffer[0])
+		fmt.Println("Msg type received: ", buffer[0])
 		if byte(getCurrentCase().MsgType) == buffer[0] {
 			if getCurrentCase().Plain {
 				_, err := conn.Write([]byte{TRUE})
@@ -187,7 +184,7 @@ func processClient(conn net.Conn) {
 		n, err := conn.Read(buffer)
 
 		hexBuff := hex.EncodeToString(buffer[:n])
-		fmt.Printf("OG message:  %v\n", hexBuff)
+		fmt.Printf("Original message: %v\n", hexBuff)
 
 		if err != nil {
 			fmt.Println("Error reading:", err.Error())
@@ -208,7 +205,7 @@ func processClient(conn net.Conn) {
 			hexBuff = hexBuff[:o.Offset] + o.Value + hexBuff[o.Offset+uint(len(o.Value)):]
 		}
 
-		fmt.Printf("MOD message: %v\n", hexBuff)
+		fmt.Printf("Modified message: %v\n", hexBuff)
 		msgBuff, err := hex.DecodeString(hexBuff)
 		if err != nil {
 			fmt.Println("Hexbuff of wrong length: ", err.Error())
