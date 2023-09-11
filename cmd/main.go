@@ -118,7 +118,8 @@ func main() {
 	defer server.Close()
 	fmt.Println("Listening on " + SERVER_HOST + ":" + SERVER_PORT)
 	fmt.Println("Waiting for client...")
-	go sendTestcaseEnable(false)
+	sendTestcaseEnable(false)
+
 	go sendTestcaseEnable(true)
 
 	for currentCase < lenTestcases {
