@@ -1,4 +1,6 @@
-A go application to intercept and modify 5G NAS messages, to be used with a modified version of open5gs. Yaml files are used to define testcases to be run. Results is stored in mongodb.
+A go application to intercept and modify 5G NAS messages, to be used with a [modified version of Open5gs](https://github.com/theodorsm/open5gs/tree/testcases). Yaml files are used to define testcases to be run. Results is stored in mongodb. 
+
+This is part of a [5G testbed for security research](https://github.com/theodorsm/5G-testbed).
 
 ## Configuration
 
